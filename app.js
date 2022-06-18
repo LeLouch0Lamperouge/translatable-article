@@ -25,47 +25,40 @@ const translations = {
     }
   }
 
-  const English = document.getElementById("toEnglish");
-  const Arabic = document.getElementById("toArabic");
-  const article = document.getElementById("article");
-  const titles = document.getElementById("titles");
-  const lang = document.getElementById("lang");
-  const fParagraph = document.getElementById("fParagraph");
-  const sParagraph = document.getElementById("sParagraph");
-  const tParagraph = document.getElementById("tParagraph");
-  const readMore = document.getElementById("readMore");
+  const English = document.getElementsByClassName("elang")[0];
+  const Arabic = document.getElementsByClassName("alang")[0];
+  const article = document.getElementsByClassName("article")[0];
+  const titles = document.getElementsByClassName("titles")[0];
+  const lang = document.getElementsByClassName("lang")[0];
+  const fParagraph = document.getElementsByClassName("fParagraph")[0];
+  const sParagraph = document.getElementsByClassName("sParagraph")[0];
+  const tParagraph = document.getElementsByClassName("tParagraph")[0];
+  const readMore = document.getElementsByClassName("readMore")[0];
 
-  titles.innerHTML = translations.title.en;
-  lang.innerHTML = translations.choose.en;
-  fParagraph.innerHTML = translations.firstParagraph.en;
-  sParagraph.innerHTML = translations.secondParagraph.en;
-  tParagraph.innerHTML = translations.thirdParagraph.en;
-  readMore.innerHTML = translations.readMore.en;
+  let languages = "en";
+
+  function getLang() {
+    titles.innerHTML = translations.title[languages];
+    lang.innerHTML = translations.choose[languages];
+    fParagraph.innerHTML = translations.firstParagraph[languages];
+    sParagraph.innerHTML = translations.secondParagraph[languages];
+    tParagraph.innerHTML = translations.thirdParagraph[languages];
+    readMore.innerHTML = translations.readMore[languages];  
+  }
 
     English.addEventListener('click', toEnglish);
 
     function toEnglish(){
-        titles.innerHTML = translations.title.en;
-        lang.innerHTML = translations.choose.en;
-        fParagraph.innerHTML = translations.firstParagraph.en;
-        sParagraph.innerHTML = translations.secondParagraph.en;
-        tParagraph.innerHTML = translations.thirdParagraph.en;
-
-        readMore.innerHTML = translations.readMore.en;
-
+        languages = "en";
+        getLang();
         article.style.textAlign = "left";
     }
   
     Arabic.addEventListener('click', toArabic);
 
     function toArabic(){
-        titles.innerHTML = translations.title.ar;  
-        lang.innerHTML = translations.choose.ar;  
-        fParagraph.innerHTML = translations.firstParagraph.ar;
-        sParagraph.innerHTML = translations.secondParagraph.ar;
-        tParagraph.innerHTML = translations.thirdParagraph.ar;
-
-        readMore.innerHTML = translations.readMore.ar;
-
+        languages = "ar";
+        getLang();
         article.style.textAlign = "right";
     }
+    getLang();
