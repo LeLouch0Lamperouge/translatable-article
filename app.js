@@ -38,6 +38,7 @@ const translations = {
   fParagraph.innerHTML = translations.firstParagraph.en;
   sParagraph.innerHTML = translations.secondParagraph.en;
   tParagraph.innerHTML = translations.thirdParagraph.en;
+  readMore.innerHTML = translations.readMore.en;
 
     const English = document.getElementById("toEnglish");
     English.addEventListener('click', toEnglish);
