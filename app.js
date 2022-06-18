@@ -25,6 +25,8 @@ const translations = {
     }
   }
 
+  const English = document.getElementById("toEnglish");
+  const Arabic = document.getElementById("toArabic");
   const article = document.getElementById("article");
   const titles = document.getElementById("titles");
   const lang = document.getElementById("lang");
@@ -40,7 +42,6 @@ const translations = {
   tParagraph.innerHTML = translations.thirdParagraph.en;
   readMore.innerHTML = translations.readMore.en;
 
-    const English = document.getElementById("toEnglish");
     English.addEventListener('click', toEnglish);
 
     function toEnglish(){
@@ -55,7 +56,6 @@ const translations = {
         article.style.textAlign = "left";
     }
   
-    const Arabic = document.getElementById("toArabic");
     Arabic.addEventListener('click', toArabic);
 
     function toArabic(){
